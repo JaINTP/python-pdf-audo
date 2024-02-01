@@ -8,7 +8,7 @@ Only tested on Windows as of now.
 
 ## Usage:
 ```
-usage: main.py [-h] (-p | -s) [-v VOICE] [-r RATE] [--output OUTPUT] file_name
+usage: pdf2audio.py [-h] (-p | -s) [-v VOICE] [-r RATE] [--output OUTPUT] file_name
 
 Convert PDF files to audio
 
@@ -26,8 +26,8 @@ options:
 ```
 ### Example Usage:
 ```
-python .\main.py .\book.pdf --play -r 200 -v 1
-python .\main.py .\book.pdf --save --output output.mp3 
+python .\pdf2audio.py .\book.pdf --play -r 200 -v 1
+python .\pdf2audio.py .\book.pdf --save --output output.mp3 
 ```
 
 
