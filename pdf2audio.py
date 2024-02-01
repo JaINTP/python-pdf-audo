@@ -25,7 +25,7 @@ class VoiceAssistant:
 
     def __init__(self):
         """
-        Initializes an instance of MyClass.
+        Initializes an instance of VoiceAssistant.
 
         This function initializes the speaker object using pyttsx3 library.
 
