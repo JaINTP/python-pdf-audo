@@ -3,8 +3,9 @@
 This module provides functionality for converting PDF files to audio files.
 """
 
-import os
 import argparse
+import mimetypes
+import os
 import pyttsx3
 from PyPDF2 import PdfReader
 
@@ -124,11 +125,16 @@ class PdfToAudio:
         Raises:
             TypeError: If the pdf_file argument is not a string.
             FileNotFoundError: If the specified PDF file does not exist.
-        """
+        """        
         if not isinstance(pdf_file, str):
             raise TypeError("File name must be a string")
+
         if not os.path.isfile(pdf_file):
             raise FileNotFoundError(f"File '{pdf_file}' does not exist!")
+        else:
+            file_mime_type, _ = mimetypes.guess_type(pdf_file)
+            if file_mime_type != 'application/pdf':
+                raise TypeError(f"File '{pdf_file}' is not a PDF file!")
 
         self.reader = PdfReader(open(pdf_file, 'rb'))
         self.voice_assistant = voice_assistant
